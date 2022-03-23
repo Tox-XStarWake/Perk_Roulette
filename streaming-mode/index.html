@@ -4,20 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Killer & Survivor Perk Roulette | Dead by Daylight Randomizer</title>
-        <meta name="description" content="Like a perk roulette wheel, this Randomizer generates random killer or survivor perks to play with in Dead by Daylight.">
+        <title>Perk Roulette for OBS, etc. | Dead by Daylight Randomizer</title>
+        <meta name="description" content="Randomize perks directly in OBS, XSplit or any other streaming software.">
 
         <link rel="shortcut icon" href="https://verewygt.github.io/perkroulette/css/img/favicon.png">
 
-        <meta property="st:section" content="Like a perk roulette wheel, this Randomizer generates random killer or survivor perks to play with in Dead by Daylight.">
-        <meta name="twitter:title" content="Killer & Survivor Perk Roulette | Dead by Daylight Randomizer">
-        <meta name="twitter:description" content="Like a perk roulette wheel, this Randomizer generates random killer or survivor perks to play with in Dead by Daylight.">
+        <meta property="st:section" content="Randomize perks directly in OBS, XSplit or any other streaming software.">
+        <meta name="twitter:title" content="Perk Roulette for OBS, etc. | Dead by Daylight Randomizer">
+        <meta name="twitter:description" content="Randomize perks directly in OBS, XSplit or any other streaming software.">
 
         <link rel="stylesheet" href="https://verewygt.github.io/perkroulette/css/app.css" media="all" id="appcss">
-        <script src="https://verewygt.github.io/perkroulette/js/app.js" type="text/javascript"></script>
-
-        <!-- <link rel="stylesheet" href="C:\Users\Julien Zbinden\Documents\GitHub\Sites\verewygt.github.io\perkroulette\css\app.css" media="all" id="appcss">
-        <script src="C:\Users\Julien Zbinden\Documents\GitHub\Sites\verewygt.github.io\perkroulette\js\app.js" type="text/javascript"></script> -->
+        <script src="https://verewygt.github.io/perkroulette/js/streaming-mode.js" type="text/javascript"></script>
 
         <meta name="google-site-verification" content="bWB7m6flbE9J8xvgVjozLnzaBwDFCiOd6Fx80WeT1P4" />
 
@@ -33,7 +30,7 @@
         <script src="https://verewygt.github.io/perkroulette/js/ga-optout.js" type="text/javascript"></script>
     </head>
 
-    <body class="perkroulette-app" id="perkroulette-app" onload="loadPerks()">
+    <body class="perkroulette-app" id="streaming-mode" onload="loadPerks()">
         <div class="app-content-parent" id="inner">
 
             <header class="app-header">
@@ -47,10 +44,10 @@
                     <nav class="navigation">
                         <ul class="nav-list">
                             <li class="nav-element">
-                                <a class="nav-link current" href="https://verewygt.github.io/perkroulette/">Perks</a>
+                                <a class="nav-link" href="https://verewygt.github.io/perkroulette/">Perks</a>
                             </li>
                             <li class="nav-element">
-                                <a class="nav-link" href="https://verewygt.github.io/perkroulette/streaming-mode">Streaming Mode</a>
+                                <a class="nav-link current" href="https://verewygt.github.io/perkroulette/streaming-mode">Streaming mode</a>
                             </li>
                         </ul>
                     </nav>
@@ -78,9 +75,7 @@
                         </div>
 
                         <div class="perks">
-                            <h3>Perk Management
-                            </h3>
-
+                            <h3>Perk Management</h3>
                             <form id="search-input-wrapper" name="search-input-wrapper">
                                 <input type="text" id="search-input" onkeyup="filter()" placeholder="Search for perk or character" title="Search for perk or character">
                                 <input type="reset" value="" onclick="resetFilter()" id="search-clear" class="hidden">
@@ -89,10 +84,32 @@
                                 <button class="selection-button" onclick="selAll()">Select all</button>
                                 <button class="selection-button" onclick="selNone()">Select none</button>
                             </div>
-
-                            <div class="generated-list" id="perk-list">
-                            </div>
+                            <div class="generated-list" id="perk-list"></div>
                         </div>
+
+                        <div class="appearance">
+                            <h3>Appearance</h3>
+                            <form>
+                                <div class="label-gr">
+                                    <label for="bg-color">Background Color</label>
+                                    <input type="text" name="bg-color" value="transparent">
+                                </div>
+                                <div class="label-gr">
+                                    <label for="perk-name-color">Perk Name Color</label>
+                                    <input type="text" name="perk-name-color" value="#ffffff">
+                                </div>
+                                <div class="label-gr">
+                                    <label for="char-color">Character Color</label>
+                                    <input type="text" name="char-color" value="#ff8800">
+                                </div>
+                                <div class="label-gr-wide">
+                                    <label for="bg-url">Perk Image URL</label>
+                                    <input type="url" name="bg-url" value="Default">
+                                </div>
+                            </form>
+                        </div>
+
+                        <button id="apply" type="button" name="apply" onclick="applyChanges()">Apply Changes</button>
                     </div>
                 </div>
 
@@ -104,107 +121,40 @@
                         </div>
                     </noscript>
 
+
+
                     <div class="sub-menu">
-                        <span class="tag">Updated</span>
-                        <span class="ver">CHAPTER 23: Sadako Rising</span>
+                        <h1 class="site-title">Streaming mode</h1>
 
                         <div class="info">
                             <input type="radio" name="tut-toggle" id="hide-tut">
                             <input type="radio" name="tut-toggle" id="show-tut">
-                            <label for="show-tut">?</label>
+                            <label for="show-tut">How to add</label>
                             <div class="tutorial-panel">
                                 <label for="hide-tut"></label>
-                                <h2 class="site-subtitle">What's this about?</h2>
-                                <p class="site-paragraph">This Randomizer follows the same principle as a perk roulette wheel: It selects four random killer or survivor perks to challenge you in a game of Dead by Daylight. It's also optimized for mobile and easy to configure.</p>
+                                <h2 class="site-subtitle">How do I add the generator to my streaming software?</h2>
+                                <p class="site-paragraph">Follow these simple steps to add the Perk Roulette overlay for Dead by Daylight to your streams.</p>
 
-                                <h2 class="site-subtitle">How does it work?</h2>
-                                <p class="site-paragraph">Under 'Perk Type', select if you would like to randomize killer or survivor perks.</p>
-                                <p class="site-paragraph">Search for perks under 'Perk Management' that you want to disable if you don't want them to show up in the results. But you need to have at least 4 perks selected.</p>
-                                <p class="site-paragraph">Click on the 'Randomize' button to get your perks.</p>
+                                <h2 class="site-subtitle">OBS</h2>
+                                <p class="site-paragraph">Configure the generator as you choose, click "Apply Changes" and copy your streaming software link.</p>
+                                <p class="site-paragraph">In the sources tab, add a new 'browser' source. Paste the link copied from the site in the URL field. Choose a resolution for the overlay, 1800 x 800 for example works fine.</p>
+                                <p class="site-paragraph">TIP: Tick the checkbox "Refresh browser if scene becomes active" to reroll the generator each time you switch back to the scene or you hide & unhide the browser source.</p>
 
-                                <p class="site-paragraph">Do you have a question? Something is not working as it should? Don't hesitate to DM me on Twitter (<a class="link" href="https://twitter.com/verewygt" target="_blank" title="https://twitter.com/verewygt" rel="noreferrer">@verewygt</a>) and I will try to get to you!</p>
+                                <p class="site-paragraph">Do you have a question? Something is not working as it should? Don't hesitate to DM me on Twitter (<a class="link" href="https://twitter.com/verewygt" target="_blank" title="https://twitter.com/verewygt" rel="noreferrer">@verewygt</a>) and I will try to get to you. Have fun!</p>
                             </div>
                         </div>
                     </div>
 
-                    <h1 class="site-title">Dead by Daylight Perk Roulette</h1>
-                    <h2 class="site-subtitle">Random Survivor & Killer Perks</h2>
-
-                    <div class="perks-hgrid">
-
-                        <div class="perk_wrapper">
-                            <div class="perk" id="p0">
-                      <div class="perk_shadow"></div>
-
-                      <div class="perk_icon" id="pi0"></div>
-
-                      <div class="perk_outline"></div>
-                            </div>
-                            <div class="perk-info">
-                                <div class="perk_name_container">
-                                    <p class="perk_name" id="pn0"></p>
-                                </div>
-
-                                <p class="perk_character" id="pc0"></p>
-                            </div>
-                        </div>
-
-                        <div class="perk_wrapper">
-                            <div class="perk" id="p1">
-                                <div class="perk_shadow"></div>
-
-                                <div class="perk_icon" id="pi1"></div>
-
-                                <div class="perk_outline"></div>
-                            </div>
-                            <div class="perk-info">
-                                <div class="perk_name_container">
-                                    <p class="perk_name" id="pn1"></p>
-                                </div>
-
-                                <p class="perk_character" id="pc1"></p>
-                            </div>
-                        </div>
-
-                        <div class="perk_wrapper">
-                            <div class="perk" id="p2">
-                                <div class="perk_shadow"></div>
-
-                                <div class="perk_icon" id="pi2"></div>
-
-                                <div class="perk_outline"></div>
-                            </div>
-                            <div class="perk-info">
-                                <div class="perk_name_container">
-                                    <p class="perk_name" id="pn2"></p>
-                                </div>
-
-                                <p class="perk_character" id="pc2"></p>
-                            </div>
-                        </div>
-
-                        <div class="perk_wrapper">
-                            <div class="perk" id="p3">
-                                <div class="perk_shadow"></div>
-
-                                <div class="perk_icon" id="pi3"></div>
-
-                                <div class="perk_outline"></div>
-                            </div>
-                            <div class="perk-info">
-                                <div class="perk_name_container">
-                                    <p class="perk_name" id="pn3"></p>
-                                </div>
-
-                                <p class="perk_character" id="pc3"></p>
-                            </div>
-                        </div>
+                    <h2 class="site-subtitle">Preview</h2>
+                    <div class="preview-container">
+                        <iframe id="embed-preview" src="https://verewygt.github.io/perkroulette/streaming-mode/embed?type=surv" width="100%" height="100%"></iframe>
                     </div>
 
-                    <div class="big-main-wrapper">
-                        <div class="error-message" style="display: none;" id="btn-error-msg">
-                        </div>
-                        <button class="big-main" id="stcky" onclick="pickRandomPerk()">Randomize</button>
+
+                    <h2 class="site-subtitle">Streaming Software Link</h2>
+                    <div class="link-field">
+                        <input id="link-input" type="text" name="stream-software-url" value="https://verewygt.github.io/perkroulette/streaming-mode/embed?type=surv">
+                        <input id="link-copy-btn" type="button" value="Copy URL" onclick="copyToClipboard()">
                     </div>
                 </div>
             </div>
