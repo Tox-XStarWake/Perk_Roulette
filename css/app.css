@@ -326,7 +326,7 @@ a.simple-white {
     font-size: 14px;
     border: unset;
     border-radius: 50px;
-    background-image: url("https://verewygt.github.io/perkroulette/css/img/icns/donate.png");
+    background-image: url("http://perkroulette.xstarwake.com/css/img/icns/donate.png");
     background-size: 18px;
     background-position: 20px center;
     background-repeat: no-repeat;
@@ -880,7 +880,7 @@ input#link-input {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 28px;
-    background: url(https://verewygt.github.io/perkroulette/css/img/icns/link.png);
+    background: url(http://perkroulette.xstarwake.com/css/img/icns/link.png);
     background-position: 20px center;
     background-repeat: no-repeat;
     background-size: 20px;
@@ -1030,7 +1030,7 @@ body#streaming-mode-embed .perk_character {
 /*------------------------------ ERROR 404 ---------------------------------*/
 .img-404 {
     position: absolute;
-    background-image: url(https://verewygt.github.io/perkroulette/css/img/surv/iconperks-distortion.png);
+    background-image: url(hhttp://perkroulette.xstarwake.com/css/img/surv/iconperks-distortion.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

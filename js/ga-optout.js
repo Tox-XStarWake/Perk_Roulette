@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
         var banner = document.getElementById('cookie-banner');
         banner.style = "display: none;";
 
-        if (window.location.href == "https://verewygt.github.io/privacy/") {
+        if (window.location.href == "http://perkroulette.xstarwake.com/privacy/") {
             var optout = document.getElementById('optout-msg');
             optout.textContent = " Opt-out cookie was set in your browser.";
         }

@@ -1,7 +1,7 @@
 var perk_json;
 
 function applyChanges() {
-    var link = "https://verewygt.github.io/perkroulette/streaming-mode/embed/";
+    var link = "http://perkroulette.xstarwake.com/streaming-mode/embed/";
 
     if (document.querySelector("input#surv").checked) {
         link += "?type=surv";
@@ -48,12 +48,12 @@ function loadPerks() {
 
     if (document.querySelector("input#surv").checked) {
         var request = new XMLHttpRequest();
-        request.open("GET", "https://verewygt.github.io/perkroulette/js/survivor-perks.json", false);
+        request.open("GET", "http://perkroulette.xstarwake.com/js/survivor-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
     } else if (document.querySelector("input#kill").checked) {
         var request = new XMLHttpRequest();
-        request.open("GET", "https://verewygt.github.io/perkroulette/js/killer-perks.json", false);
+        request.open("GET", "http://perkroulette.xstarwake.com/js/killer-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
     }
