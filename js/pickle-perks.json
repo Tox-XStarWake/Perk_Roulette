@@ -1,21 +1,21 @@
 {
 	"perks": [{
 		"perk_name": "Hot Pickle",
-		"character": "XStarWake Teachable Perk"
+		"character": "Pickle Type"
 	}, {
 		"perk_name": "Sweet Pickle",
-		"character": "XStarWake Teachable Perk"
+		"character": "Pickle Type"
 	}, {
 		"perk_name": "Pickle Juice",
-		"character": "XStarWake Teachable Perk"
+		"character": "Pickle Type"
 	}, {
 		"perk_name": "Pickle balls",
-		"character": "XStarWake Teachable Perk"
+		"character": "Pickle Type"
 	}, {
 		"perk_name": "Pickle Powder",
-		"character": "XStarWake Teachable Perk"
+		"character": "Pickle Addon"
 	}, {
 		"perk_name": "No Pickle Powder",
-		"character": "XStarWake Teachable Perk"
+		"character": "Pickle Addon"
 	}]
 }
