@@ -232,6 +232,16 @@ function perk1an() {
         document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
         document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
+        document.getElementById("p1").removeAttribute("style");
+        document.getElementById("p2").removeAttribute("style");
+        document.getElementById("p3").removeAttribute("style");
+        document.getElementById("pn1").removeAttribute("style");
+        document.getElementById("pn2").removeAttribute("style");
+        document.getElementById("pn3").removeAttribute("style");
+        document.getElementById("pc1").removeAttribute("style");
+        document.getElementById("pc2").removeAttribute("style");
+        document.getElementById("pc3").removeAttribute("style");
+
 //        window.setTimeout(perk2an, 1000);
         window.setTimeout(enableButton, 1500);
     } else {
