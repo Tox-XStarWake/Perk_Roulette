@@ -168,13 +168,13 @@ function pickRandomPerk() {
             }
 
             for (var i = 0; i < 1; i++) {
-                document.getElementById("pn2").innerHTML = perk_json.perks[sel_perks[i]].perk_name;
-                document.getElementById("pc2").innerHTML = perk_json.perks[sel_perks[i]].character;
-                document.getElementById("pi2").style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
+                document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
+                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
+                document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
 
-                document.getElementById("pn2").style.opacity = "0";
-                document.getElementById("pc2").style.opacity = "0";
-                document.getElementById("p2").style.opacity = "0";
+                document.getElementById("pn" + i).style.opacity = "0";
+                document.getElementById("pc" + i).style.opacity = "0";
+                document.getElementById("p" + i).style.opacity = "0";
             }
 
             window.setTimeout(perk1an, 250);
