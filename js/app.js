@@ -65,18 +65,18 @@ function loadPerks() {
 
     if (document.getElementById('pckl').checked) {
         for (var i = 0; i < perktype_json.perks.length; i++) {
-            var pn = perktype_json.perkstype[i].perktype_name;
-            var pc = perktype_json.perkstype[i].character.replace(/ Teachable Perk/gi, '');
+            var pnt = perktype_json.perkstype[i].perktype_name;
+            var pct = perktype_json.perkstype[i].character.replace(/ Teachable Perk/gi, '');
     
-            var newLabel = document.createElement('label');
-            newLabel.id = 'element-' + i;
-            newLabel.classList.add('perk-list-item');
+            var newLabelType = document.createElement('labeltype');
+            newLabelType.id = 'element-type-' + i;
+            newLabelType.classList.add('perk-list-item');
     
-            var pchid = "pch-" + i;
-            newLabel.setAttribute("for", pchid);
-            newLabel.innerHTML = "<input type=\"checkbox\" name=\"perk-check\" id=\"pch-" + i + "\" checked><span class=\"perk-name\">" + pn + "<\/span><span class=\"perk-character\">" + pc + "<\/span>";
+            var pchidt = "pcht-" + i;
+            newLabelType.setAttribute("for", pchidt);
+            newLabelType.innerHTML = "<input type=\"checkbox\" name=\"perk-check\" id=\"pch-" + i + "\" checked><span class=\"perk-name\">" + pn + "<\/span><span class=\"perk-character\">" + pc + "<\/span>";
     
-            list.appendChild(newLabel);
+            list.appendChild(newLabelType);
         }
     }
 
