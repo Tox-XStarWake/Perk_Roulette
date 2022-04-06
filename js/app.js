@@ -123,7 +123,7 @@ function pickRandomPerk() {
             if (checkbox.checked == false) {
                 perk_blacklist.push(i);
             }
-
+        }    
     } else {
 
         for (var i = 0; i < perk_json.perks.length; i++) {
@@ -134,7 +134,7 @@ function pickRandomPerk() {
             if (checkbox.checked == false) {
                 perk_blacklist.push(i);
             }  
-
+        }
     }
 
     if (document.getElementById('pckl').checked) {
@@ -221,7 +221,7 @@ function pickRandomPerk() {
 
             window.setTimeout(perk1an, 250);
         }   
-        
+    }    
 }
 
 function perk1an() {
