@@ -1,4 +1,5 @@
 var perk_json;
+var perktype_json;
 var active_type;
 
 function loadPerks() {
@@ -29,7 +30,7 @@ function loadPerks() {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-addons.json", false);
         request.send(null);
-        perk2_json = JSON.parse(request.responseText);
+        perktype_json = JSON.parse(request.responseText);
 
         active_type = "pckl";
 
@@ -40,6 +41,12 @@ function loadPerks() {
     perk_json.perks.sort(function(a, b) {
         return a.perk_name.localeCompare(b.perk_name);
     });
+    
+    if (document.getElementById('pckl').checked) {
+        perktype_json.perkstkype.sort(function(a, b) {
+            return a.perktype_name.localeCompare(b.perktype_name);
+        });
+    }    
 
     for (var i = 0; i < perk_json.perks.length; i++) {
         var pn = perk_json.perks[i].perk_name;
@@ -55,6 +62,24 @@ function loadPerks() {
 
         list.appendChild(newLabel);
     }
+
+    if (document.getElementById('pckl').checked) {
+        for (var i = 0; i < perktype_json.perks.length; i++) {
+            var pn = perktype_json.perkstype[i].perktype_name;
+            var pc = perktype_json.perkstype[i].character.replace(/ Teachable Perk/gi, '');
+    
+            var newLabel = document.createElement('label');
+            newLabel.id = 'element-' + i;
+            newLabel.classList.add('perk-list-item');
+    
+            var pchid = "pch-" + i;
+            newLabel.setAttribute("for", pchid);
+            newLabel.innerHTML = "<input type=\"checkbox\" name=\"perk-check\" id=\"pch-" + i + "\" checked><span class=\"perk-name\">" + pn + "<\/span><span class=\"perk-character\">" + pc + "<\/span>";
+    
+            list.appendChild(newLabel);
+        }
+    }
+
 }
 
 
