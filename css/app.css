@@ -781,6 +781,14 @@ span.perk-name {
     white-space: nowrap;
 }
 
+span.perk-name-type {
+    display: block;
+    padding-right: 8px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+}
+
 span.perk-character {
     text-transform: uppercase;
     font-weight: bold;
@@ -799,12 +807,27 @@ input[name="perk-check"] {
     right: 10px;
 }
 
+input[name="perk-check-type"] {
+    float: right;
+    position: absolute;
+    right: 10px;
+}
+
 input[name="perk-check"]:not(:checked)~span.perk-name {
     opacity: 0.25;
     text-decoration: line-through;
 }
 
+input[name="perk-check"]:not(:checked)~span.perk-name-type {
+    opacity: 0.25;
+    text-decoration: line-through;
+}
+
 input[name="perk-check"]:not(:checked)~span.perk-character {
+    opacity: 0.25;
+}
+
+input[name="perk-check"]:not(:checked)~span.perk-character-type {
     opacity: 0.25;
 }
 
