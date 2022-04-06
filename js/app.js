@@ -63,22 +63,22 @@ function loadPerks() {
         list.appendChild(newLabel);
     }
 
-    if (document.getElementById('pckl').checked) {
-        for (var i = 0; i < perktype_json.perks.length; i++) {
-            var pnt = perktype_json.perkstype[i].perktype_name;
-            var pct = perktype_json.perkstype[i].charactertype.replace(/ Teachable Perk/gi, '');
-    
-            var newLabelType = document.createElement('labeltype');
-            newLabelType.id = 'element-type-' + i;
-            newLabelType.classList.add('perk-list-item-type');
-    
-            var pchidt = "pcht-" + i;
-            newLabelType.setAttribute("for", pchidt);
-            newLabelType.innerHTML = "<input type=\"checkbox\" name=\"perk-check-type\" id=\"pcht-" + i + "\" checked><span class=\"perk-name-type\">" + pnt + "<\/span><span class=\"perk-character-type\">" + pct + "<\/span>";
-    
-            list.appendChild(newLabelType);
-        }
-    }
+//    if (document.getElementById('pckl').checked) {
+//        for (var i = 0; i < perktype_json.perks.length; i++) {
+//            var pnt = perktype_json.perkstype[i].perktype_name;
+//            var pct = perktype_json.perkstype[i].charactertype.replace(/ Teachable Perk/gi, '');
+//    
+//            var newLabelType = document.createElement('labeltype');
+//            newLabelType.id = 'element-type-' + i;
+//            newLabelType.classList.add('perk-list-item-type');
+//    
+//            var pchidt = "pcht-" + i;
+//            newLabelType.setAttribute("for", pchidt);
+//            newLabelType.innerHTML = "<input type=\"checkbox\" name=\"perk-check-type\" id=\"pcht-" + i + "\" checked><span class=\"perk-name-type\">" + pnt + "<\/span><span class=\"perk-character-type\">" + pct + "<\/span>";
+//    
+//            listtype.appendChild(newLabelType);
+//        }
+//    }
 
 }
 
