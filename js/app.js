@@ -22,9 +22,15 @@ function loadPerks() {
 
     } else if (document.getElementById('pckl').checked) {
         var request = new XMLHttpRequest();
-        request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-perks.json", false);
+        request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-types.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
+
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-addons.json", false);
+        request.send(null);
+        perk2_json = JSON.parse(request.responseText);
+
         active_type = "pckl";
 
     }
@@ -144,7 +150,7 @@ function pickRandomPerk() {
         if (perk_blacklist.length > (perk_json.perks.length - 1)) {
 
             var errorbox = document.getElementById('btn-error-msg');
-            errorbox.innerHTML = "Not enough perks selected. Please select at least four.";
+            errorbox.innerHTML = "Not enough perks selected. Please select at least one.";
             errorbox.style.display = "table";
 
         } else {
