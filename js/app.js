@@ -232,7 +232,8 @@ function perk1an() {
         document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
         document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-        window.setTimeout(perk2an, 1000);
+//        window.setTimeout(perk2an, 1000);
+        window.setTimeout(enableButton, 1500);
     } else {
         document.getElementById("p0").style.opacity = "1";
 
@@ -245,33 +246,63 @@ function perk1an() {
 }
 
 function perk2an() {
-    document.getElementById("p1").style.opacity = "1";
+    if (document.getElementById('pckl').checked) {
+//        document.getElementById("p1").style.opacity = "1";
 
-    document.getElementById("p1").style.animation = "perkRevealAnimation 1.5s ease-out";
-    document.getElementById("pn1").style.animation = "perkRevealAnimation 1s ease-out";
-    document.getElementById("pc1").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+//        document.getElementById("p1").style.animation = "perkRevealAnimation 1.5s ease-out";
+//        document.getElementById("pn1").style.animation = "perkRevealAnimation 1s ease-out";
+//        document.getElementById("pc1").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-    window.setTimeout(perk3an, 1000);
+//        window.setTimeout(perk3an, 1000);
+    } else {
+        document.getElementById("p1").style.opacity = "1";
+
+        document.getElementById("p1").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn1").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc1").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+
+        window.setTimeout(perk3an, 1000);
+    }   
 }
 
 function perk3an() {
-    document.getElementById("p2").style.opacity = "1";
+    if (document.getElementById('pckl').checked) {
+//        document.getElementById("p2").style.opacity = "1";
 
-    document.getElementById("p2").style.animation = "perkRevealAnimation 1.5s ease-out";
-    document.getElementById("pn2").style.animation = "perkRevealAnimation 1s ease-out";
-    document.getElementById("pc2").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+//        document.getElementById("p2").style.animation = "perkRevealAnimation 1.5s ease-out";
+//        document.getElementById("pn2").style.animation = "perkRevealAnimation 1s ease-out";
+//        document.getElementById("pc2").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-    window.setTimeout(perk4an, 1000);
+//        window.setTimeout(perk4an, 1000);
+    } else {
+        document.getElementById("p2").style.opacity = "1";
+
+        document.getElementById("p2").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn2").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc2").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+
+        window.setTimeout(perk4an, 1000);
+    }
 }
 
 function perk4an() {
-    document.getElementById("p3").style.opacity = "1";
+    if (document.getElementById('pckl').checked) {
+//        document.getElementById("p3").style.opacity = "1";
 
-    document.getElementById("p3").style.animation = "perkRevealAnimation 1.5s ease-out";
-    document.getElementById("pn3").style.animation = "perkRevealAnimation 1s ease-out";
-    document.getElementById("pc3").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+//        document.getElementById("p3").style.animation = "perkRevealAnimation 1.5s ease-out";
+//        document.getElementById("pn3").style.animation = "perkRevealAnimation 1s ease-out";
+//        document.getElementById("pc3").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-    window.setTimeout(enableButton, 1500);
+//        window.setTimeout(enableButton, 1500);
+    } else {
+        document.getElementById("p3").style.opacity = "1";
+
+        document.getElementById("p3").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn3").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc3").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+
+        window.setTimeout(enableButton, 1500);
+    }
 }
 
 function enableButton() {
