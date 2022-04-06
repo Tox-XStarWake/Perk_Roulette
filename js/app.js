@@ -113,57 +113,115 @@ function resetFilter() {
 function pickRandomPerk() {
 
     var perk_blacklist = [];
-    for (var i = 0; i < perk_json.perks.length; i++) {
+    if (document.getElementById('pckl').checked) {
 
-        var pchid = "pch-" + i;
-        var checkbox = document.getElementById(pchid);
+        for (var i = 0; i < perk_json.perks.length; i++) {
 
-        if (checkbox.checked == false) {
-            perk_blacklist.push(i);
-        }
-    }
+            var pchid = "pch-" + i;
+            var checkbox = document.getElementById(pchid);
 
-    if (perk_blacklist.length > (perk_json.perks.length - 4)) {
-
-        var errorbox = document.getElementById('btn-error-msg');
-        errorbox.innerHTML = "Not enough perks selected. Please select at least four.";
-        errorbox.style.display = "table";
+            if (checkbox.checked == false) {
+                perk_blacklist.push(i);
+            }
 
     } else {
 
-        var errorbox = document.getElementById('btn-error-msg');
-        errorbox.style.display = "none";
+        for (var i = 0; i < perk_json.perks.length; i++) {
 
-        cleanup();
-        document.getElementById("stcky").disabled = true;
+            var pchid = "pch-" + i;
+            var checkbox = document.getElementById(pchid);
+    
+            if (checkbox.checked == false) {
+                perk_blacklist.push(i);
+            }  
 
-        var sel_perks = [];
-        while (sel_perks.length < 4) {
-            var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
-            if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-        if (sel_perks.indexOf(randomnumber) > -1) continue;
-            sel_perks[sel_perks.length] = randomnumber;
-        }
-
-        var i = 0;
-        while (i < 4) {
-            var id = 'p' + i.toString();
-            document.getElementById(id).style.backgroundImage = "url(css/img/perk_purple.png)";
-            i++;
-        }
-
-        for (var i = 0; i < 4; i++) {
-            document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
-            document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
-            document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
-
-            document.getElementById("pn" + i).style.opacity = "0";
-            document.getElementById("pc" + i).style.opacity = "0";
-            document.getElementById("p" + i).style.opacity = "0";
-        }
-
-        window.setTimeout(perk1an, 250);
     }
+
+    if (document.getElementById('pckl').checked) {
+        if (perk_blacklist.length > (perk_json.perks.length - 1)) {
+
+            var errorbox = document.getElementById('btn-error-msg');
+            errorbox.innerHTML = "Not enough perks selected. Please select at least four.";
+            errorbox.style.display = "table";
+
+        } else {
+
+            var errorbox = document.getElementById('btn-error-msg');
+            errorbox.style.display = "none";
+
+            cleanup();
+            document.getElementById("stcky").disabled = true;
+
+            var sel_perks = [];
+            while (sel_perks.length < 4) {
+                var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
+                if (perk_blacklist.indexOf(randomnumber) > -1) continue;
+            if (sel_perks.indexOf(randomnumber) > -1) continue;
+                sel_perks[sel_perks.length] = randomnumber;
+            }
+
+            var i = 0;
+            while (i < 4) {
+                var id = 'p' + i.toString();
+                document.getElementById(id).style.backgroundImage = "url(css/img/perk_purple.png)";
+                i++;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
+                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
+                document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
+
+                document.getElementById("pn" + i).style.opacity = "0";
+                document.getElementById("pc" + i).style.opacity = "0";
+                document.getElementById("p" + i).style.opacity = "0";
+            }
+
+            window.setTimeout(perk1an, 250);
+        }
+    } else {
+        if (perk_blacklist.length > (perk_json.perks.length - 4)) {
+
+            var errorbox = document.getElementById('btn-error-msg');
+            errorbox.innerHTML = "Not enough perks selected. Please select at least four.";
+            errorbox.style.display = "table";
+
+        } else {
+
+            var errorbox = document.getElementById('btn-error-msg');
+            errorbox.style.display = "none";
+
+            cleanup();
+            document.getElementById("stcky").disabled = true;
+
+            var sel_perks = [];
+            while (sel_perks.length < 4) {
+                var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
+                if (perk_blacklist.indexOf(randomnumber) > -1) continue;
+            if (sel_perks.indexOf(randomnumber) > -1) continue;
+                sel_perks[sel_perks.length] = randomnumber;
+            }
+
+            var i = 0;
+            while (i < 4) {
+                var id = 'p' + i.toString();
+                document.getElementById(id).style.backgroundImage = "url(css/img/perk_purple.png)";
+                i++;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
+                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
+                document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
+
+                document.getElementById("pn" + i).style.opacity = "0";
+                document.getElementById("pc" + i).style.opacity = "0";
+                document.getElementById("p" + i).style.opacity = "0";
+            }
+
+            window.setTimeout(perk1an, 250);
+        }   
+        
 }
 
 function perk1an() {
