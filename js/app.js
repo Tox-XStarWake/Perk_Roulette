@@ -167,14 +167,14 @@ function pickRandomPerk() {
                 i++;
             }
 
-            for (var i = 1; i < 2; i++) {
-                document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
-                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
-                document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
+            for (var i = 0; i < 1; i++) {
+                document.getElementById("pn2").innerHTML = perk_json.perks[sel_perks[i]].perk_name;
+                document.getElementById("pc2").innerHTML = perk_json.perks[sel_perks[i]].character;
+                document.getElementById("pi2").style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
 
-                document.getElementById("pn" + i).style.opacity = "0";
-                document.getElementById("pc" + i).style.opacity = "0";
-                document.getElementById("p" + i).style.opacity = "0";
+                document.getElementById("pn2").style.opacity = "0";
+                document.getElementById("pc2").style.opacity = "0";
+                document.getElementById("p2").style.opacity = "0";
             }
 
             window.setTimeout(perk1an, 250);
@@ -225,13 +225,23 @@ function pickRandomPerk() {
 }
 
 function perk1an() {
-    document.getElementById("p0").style.opacity = "1";
+    if (document.getElementById('pckl').checked) {
+        document.getElementById("p0").style.opacity = "1";
 
-    document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
-    document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
-    document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+        document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-    window.setTimeout(perk2an, 1000);
+        window.setTimeout(perk2an, 1000);
+    } else {
+        document.getElementById("p0").style.opacity = "1";
+
+        document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+
+        window.setTimeout(perk2an, 1000);
+    }
 }
 
 function perk2an() {
