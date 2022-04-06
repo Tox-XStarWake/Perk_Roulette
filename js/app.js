@@ -12,21 +12,21 @@ function loadPerks() {
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "surv";
-        cleanup();
+
     } else if (document.getElementById('kill').checked) {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/killer-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "kill";
-        cleanup();
+
     } else if (document.getElementById('pckl').checked) {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "pckl";
-        cleanup();
+
     }
 
     //  --- Sort perks alphabetically ---
