@@ -234,7 +234,7 @@ body#streaming-mode div.main-content-area {
 }
 
 .selection-wrapper {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .selection-button {
@@ -741,7 +741,7 @@ label[for="surv"]:hover, label[for="kill"], label[for="pckl"] {
 #perk-list {
     overflow-y: scroll;
     position: absolute;
-    top: 245px;
+    top: 285px;
     bottom: 15px;
     right: 15px;
     left: 15px;
