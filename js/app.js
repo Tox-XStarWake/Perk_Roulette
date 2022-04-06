@@ -12,18 +12,21 @@ function loadPerks() {
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "surv";
+        cleanup();
     } else if (document.getElementById('kill').checked) {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/killer-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "kill";
+        cleanup();
     } else if (document.getElementById('pckl').checked) {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "pckl";
+        cleanup();
     }
 
     //  --- Sort perks alphabetically ---
@@ -231,16 +234,6 @@ function perk1an() {
         document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
         document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
         document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
-
-        document.getElementById("p1").removeAttribute("style");
-        document.getElementById("p2").removeAttribute("style");
-        document.getElementById("p3").removeAttribute("style");
-        document.getElementById("pn1").removeAttribute("style");
-        document.getElementById("pn2").removeAttribute("style");
-        document.getElementById("pn3").removeAttribute("style");
-        document.getElementById("pc1").removeAttribute("style");
-        document.getElementById("pc2").removeAttribute("style");
-        document.getElementById("pc3").removeAttribute("style");
 
 //        window.setTimeout(perk2an, 1000);
         window.setTimeout(enableButton, 1500);
