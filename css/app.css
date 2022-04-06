@@ -234,7 +234,7 @@ body#streaming-mode div.main-content-area {
 }
 
 .selection-wrapper {
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .selection-button {
@@ -686,7 +686,7 @@ label[for="surv"], label[for="kill"], label[for="pckl"] {
     background-size: 20px;
 }
 
-label[for="surv"]:hover, label[for="kill"], label[for="pckl"]:hover {
+label[for="surv"]:hover, label[for="kill"], label[for="pckl"] {
     background-color: #2b2b2b;
 }
 

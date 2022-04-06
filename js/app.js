@@ -18,6 +18,12 @@ function loadPerks() {
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "kill";
+    } else if (document.getElementById('pckl').checked) {
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-perks.json", false);
+        request.send(null);
+        perk_json = JSON.parse(request.responseText);
+        active_type = "pckl";
     }
 
     //  --- Sort perks alphabetically ---
