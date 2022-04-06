@@ -42,11 +42,11 @@ function loadPerks() {
         return a.perk_name.localeCompare(b.perk_name);
     });
     
-    if (document.getElementById('pckl').checked) {
-        perktype_json.perkstkype.sort(function(a, b) {
-            return a.perktype_name.localeCompare(b.perktype_name);
-        });
-    }    
+//    if (document.getElementById('pckl').checked) {
+//        perktype_json.perkstkype.sort(function(a, b) {
+//            return a.perktype_name.localeCompare(b.perktype_name);
+//        });
+//    }    
 
     for (var i = 0; i < perk_json.perks.length; i++) {
         var pn = perk_json.perks[i].perk_name;
