@@ -61,7 +61,7 @@ function pickRandomPerk() {
     customColors();
     loadPerks();
 
-    if (getUrlVars()["type"] == "pckl") {
+    if (getUrlVars()["type"] == "NULL") {
 
         if (getUrlVars()["exclude"] != null) {
             var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
@@ -155,7 +155,7 @@ function pickRandomPerk() {
 }
 
 function perk1an() {
-    if (getUrlVars()["type"] == "pckl") {
+    if (getUrlVars()["type"] == "NULL") {
         document.getElementById("p0").classList.remove('transparent');
 
         document.getElementById("p0").classList.add('animate1');
