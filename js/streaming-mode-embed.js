@@ -155,13 +155,23 @@ function pickRandomPerk() {
 }
 
 function perk1an() {
-    document.getElementById("p0").classList.remove('transparent');
+    if (getUrlVars()["type"] == "pckl") {
+        document.getElementById("p0").classList.remove('transparent');
 
-    document.getElementById("p0").classList.add('animate1');
-    document.getElementById("pn0").classList.add('animate2');
-    document.getElementById("pc0").classList.add('animate3');
+        document.getElementById("p0").classList.add('animate1');
+        ocument.getElementById("pn0").classList.add('animate2');
+        document.getElementById("pc0").classList.add('animate3');
 
-    window.setTimeout(perk2an, 1000);
+//        window.setTimeout(perk2an, 1000);
+    } else {
+        document.getElementById("p0").classList.remove('transparent');
+
+        document.getElementById("p0").classList.add('animate1');
+        ocument.getElementById("pn0").classList.add('animate2');
+        document.getElementById("pc0").classList.add('animate3');
+
+        window.setTimeout(perk2an, 1000);
+    }   
 }
 
 function perk2an() {
