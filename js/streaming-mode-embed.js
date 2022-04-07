@@ -32,13 +32,13 @@ function customColors() {
 function loadPerks() {
     if (getUrlVars()["type"] == "surv") {
         var request = new XMLHttpRequest();
-        request.open("GET", "https://perkroulette.xstarwake.com/js/survivor-perks.json", false);
+        request.open("GET", "http://perkroulette.xstarwake.com/js/survivor-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "surv";
     } else if (getUrlVars()["type"] == "kill") {
         var request = new XMLHttpRequest();
-        request.open("GET", "https://perkroulette.xstarwake.com/js/killer-perks.json", false);
+        request.open("GET", "http://perkroulette.xstarwake.com/js/killer-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "kill";
@@ -80,7 +80,7 @@ function pickRandomPerk() {
             if (getUrlVars()["bg-url"] != null) {
                 document.getElementById(id).style.backgroundImage = "url(" + getUrlVars()["bg-url"] + ")";
             } else {
-                document.getElementById(id).style.backgroundImage = "url(https://perkroulette.xstarwake.com/css/img/perk_purple.png)";
+                document.getElementById(id).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/perk_purple.png)";
             }
             i++;
 
@@ -89,7 +89,7 @@ function pickRandomPerk() {
         for (var i = 0; i < 4; i++) {
             document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
             document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
-            document.getElementById("pi" + i).style.backgroundImage = "url(https://perkroulette.xstarwake.com/css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
+            document.getElementById("pi" + i).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
 
             document.getElementById("pn" + i).classList.add('transparent');
             document.getElementById("pc" + i).classList.add('transparent');
