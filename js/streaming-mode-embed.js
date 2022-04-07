@@ -128,23 +128,44 @@ function perk1an() {
 }
 
 function perk2an() {
-    document.getElementById("p1").classList.remove('transparent');
+    if (getUrlVars()["type"] == "pckl") {
 
-    document.getElementById("p1").classList.add('animate1');
-    document.getElementById("pn1").classList.add('animate2');
-    document.getElementById("pc1").classList.add('animate3');
+        document.getElementById("p1").classList.remove('transparent');
 
-    window.setTimeout(perk3an, 1000);
+        document.getElementById("p1").classList.add('animate1');
+        document.getElementById("pn1").classList.add('animate2');
+        document.getElementById("pc1").classList.add('animate3');
+
+        window.setTimeout(perk3an, 1000);
+    } else {    
+        document.getElementById("p1").classList.remove('transparent');
+
+        document.getElementById("p1").classList.add('animate1');
+        document.getElementById("pn1").classList.add('animate2');
+        document.getElementById("pc1").classList.add('animate3');
+
+        window.setTimeout(perk3an, 1000);
+    }
 }
 
 function perk3an() {
-    document.getElementById("p2").classList.remove('transparent');
+    if (getUrlVars()["type"] == "pckl") {
+        document.getElementById("p2").classList.remove('transparent');
 
-    document.getElementById("p2").classList.add('animate1');
-    document.getElementById("pn2").classList.add('animate2');
-    document.getElementById("pc2").classList.add('animate3');
+        document.getElementById("p2").classList.add('animate1');
+        document.getElementById("pn2").classList.add('animate2');
+        document.getElementById("pc2").classList.add('animate3');
 
-    window.setTimeout(perk4an, 1000);
+//        window.setTimeout(perk4an, 1000);
+    } else {   
+        document.getElementById("p2").classList.remove('transparent');
+
+        document.getElementById("p2").classList.add('animate1');
+        document.getElementById("pn2").classList.add('animate2');
+        document.getElementById("pc2").classList.add('animate3');
+
+        window.setTimeout(perk4an, 1000);
+    }        
 }
 
 function perk4an() {
