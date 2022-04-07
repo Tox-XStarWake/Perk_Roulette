@@ -78,15 +78,15 @@ a.link:hover {
 }
 
 .animate1 {
-    animation: perkRevealAnimation 1.5s ease-out;
+    animation: perkRevealAnimation 5.5s ease-out;
 }
 
 .animate2 {
-    animation: perkRevealAnimation 1s ease-out;
+    animation: perkRevealAnimation 5s ease-out;
 }
 
 .animate3 {
-    animation: perkRevealAnimation 1s ease-out 0.3s;
+    animation: perkRevealAnimation 5s ease-out 1.3s;
 }
 
 /*------------------------------ HEADER ---------------------------------*/
