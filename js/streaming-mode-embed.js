@@ -78,7 +78,7 @@ function pickRandomPerk() {
             while (sel_perks.length < 4) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
                 if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-            if (sel_perks.indexOf(randomnumber) > -1) continue;
+            //if (sel_perks.indexOf(randomnumber) > -1) continue;
                 sel_perks[sel_perks.length] = randomnumber;
             }
 
@@ -162,7 +162,7 @@ function perk1an() {
         document.getElementById("pn0").classList.add('animate2');
         document.getElementById("pc0").classList.add('animate3');
 
-//        window.setTimeout(perk2an, 1000);
+        window.setTimeout(perk2an, 1000);
     } else {    
         document.getElementById("p0").classList.remove('transparent');
 
