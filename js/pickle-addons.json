@@ -1,9 +1,0 @@
-{
-	"perks": [{
-		"perk_name": "Pickle Powder",
-		"character": "Pickle Addon"
-	}, {
-		"perk_name": "No Pickle Powder",
-		"character": "Pickle Addon"
-	}]
-}
