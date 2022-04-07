@@ -75,7 +75,7 @@ function pickRandomPerk() {
 
         } else {
             var sel_perks = [];
-            while (sel_perks.length < 1) {
+            while (sel_perks.length < 4) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
                 if (perk_blacklist.indexOf(randomnumber) > -1) continue;
             if (sel_perks.indexOf(randomnumber) > -1) continue;
@@ -83,7 +83,7 @@ function pickRandomPerk() {
             }
 
             var i = 0;
-            while (i < 1) {
+            while (i < 4) {
                 var id = 'p' + i.toString();
                 if (getUrlVars()["bg-url"] != null) {
                     document.getElementById(id).style.backgroundImage = "url(" + getUrlVars()["bg-url"] + ")";
@@ -94,7 +94,7 @@ function pickRandomPerk() {
 
             }
 
-            for (var i = 0; i < 1; i++) {
+            for (var i = 0; i < 4; i++) {
                 document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
                 document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
                 document.getElementById("pi" + i).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
