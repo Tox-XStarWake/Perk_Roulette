@@ -77,7 +77,7 @@ function pickRandomPerk() {
             var sel_perks = [];
             while (sel_perks.length < 4) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
-                if (perk_blacklist.indexOf(randomnumber) > -1) continue;
+            //    if (perk_blacklist.indexOf(randomnumber) > -1) continue;
             //if (sel_perks.indexOf(randomnumber) > -1) continue;
                 sel_perks[sel_perks.length] = randomnumber;
             }
