@@ -1,5 +1,4 @@
 var perk_json;
-var perktype_json;
 var active_type;
 
 function loadPerks() {
@@ -27,11 +26,6 @@ function loadPerks() {
         request.send(null);
         perk_json = JSON.parse(request.responseText);
 
-        var request = new XMLHttpRequest();
-        request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-addons.json", false);
-        request.send(null);
-        perktype_json = JSON.parse(request.responseText);
-
         active_type = "pckl";
 
     }
@@ -41,12 +35,7 @@ function loadPerks() {
     perk_json.perks.sort(function(a, b) {
         return a.perk_name.localeCompare(b.perk_name);
     });
-    
-//    if (document.getElementById('pckl').checked) {
-//        perktype_json.perkstkype.sort(function(a, b) {
-//            return a.perktype_name.localeCompare(b.perktype_name);
-//        });
-//    }    
+     
 
     for (var i = 0; i < perk_json.perks.length; i++) {
         var pn = perk_json.perks[i].perk_name;
@@ -62,23 +51,6 @@ function loadPerks() {
 
         list.appendChild(newLabel);
     }
-
-//    if (document.getElementById('pckl').checked) {
-//        for (var i = 0; i < perktype_json.perks.length; i++) {
-//            var pnt = perktype_json.perkstype[i].perktype_name;
-//            var pct = perktype_json.perkstype[i].charactertype.replace(/ Teachable Perk/gi, '');
-//    
-//            var newLabelType = document.createElement('labeltype');
-//            newLabelType.id = 'element-type-' + i;
-//            newLabelType.classList.add('perk-list-item-type');
-//    
-//            var pchidt = "pcht-" + i;
-//            newLabelType.setAttribute("for", pchidt);
-//            newLabelType.innerHTML = "<input type=\"checkbox\" name=\"perk-check-type\" id=\"pcht-" + i + "\" checked><span class=\"perk-name-type\">" + pnt + "<\/span><span class=\"perk-character-type\">" + pct + "<\/span>";
-//    
-//            listtype.appendChild(newLabelType);
-//        }
-//    }
 
 }
 
@@ -203,7 +175,7 @@ function pickRandomPerk() {
 
             for (var i = 0; i < 1; i++) {
                 document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
-                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
+//                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
                 document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
 
                 document.getElementById("pn" + i).style.opacity = "0";
