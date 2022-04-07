@@ -61,7 +61,7 @@ function pickRandomPerk() {
     customColors();
     loadPerks();
 
-    if (getUrlVars()["type"] == "surv") {
+    if (getUrlVars()["type"] == "pckl") {
 
         if (getUrlVars()["exclude"] != null) {
             var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
