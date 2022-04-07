@@ -32,22 +32,16 @@ function customColors() {
 function loadPerks() {
     if (getUrlVars()["type"] == "surv") {
         var request = new XMLHttpRequest();
-        request.open("GET", "http://perkroulette.xstarwake.com/js/survivor-perks.json", false);
+        request.open("GET", "https://perkroulette.xstarwake.com/js/survivor-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "surv";
     } else if (getUrlVars()["type"] == "kill") {
         var request = new XMLHttpRequest();
-        request.open("GET", "http://perkroulette.xstarwake.com/js/killer-perks.json", false);
+        request.open("GET", "https://perkroulette.xstarwake.com/js/killer-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "kill";
-    } else if (getUrlVars()["type"] == "pckl") {
-        var request = new XMLHttpRequest();
-        request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-types.json", false);
-        request.send(null);
-        perk_json = JSON.parse(request.responseText);
-        active_type = "pckl";
     }
 
     //  --- Sort perks alphabetically ---
@@ -61,117 +55,59 @@ function pickRandomPerk() {
     customColors();
     loadPerks();
 
-//    if (getUrlVars()["type"] == "NULL") {
+    if (getUrlVars()["exclude"] != null) {
+        var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
+    } else {
+        perk_blacklist = [];
+    }
 
-//        if (getUrlVars()["exclude"] != null) {
-//            var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
-//        } else {
-//            perk_blacklist = [];
-//        }
+    if (perk_blacklist.length > (perk_json.perks.length - 4)) {
 
-//        if (perk_blacklist.length > (perk_json.perks.length - 4)) {
+        // TODO: Error: Not enough perks selected
 
-            // TODO: Error: Not enough perks selected
-
-//        } else {
-//            var sel_perks = [];
-//            while (sel_perks.length < 4) {
-//                var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
-//                if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-//            if (sel_perks.indexOf(randomnumber) > -1) continue;
-//                sel_perks[sel_perks.length] = randomnumber;
-//            }
-
-//            var i = 0;
-//            while (i < 4) {
-//                var id = 'p' + i.toString();
-//                if (getUrlVars()["bg-url"] != null) {
-//                    document.getElementById(id).style.backgroundImage = "url(" + getUrlVars()["bg-url"] + ")";
-//                } else {
-//                    document.getElementById(id).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/perk_purple.png)";
-//                }
-//                i++;
-
-//            }
-
-//            for (var i = 0; i < 4; i++) {
-//                document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
-//                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
-//                document.getElementById("pi" + i).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
-
-//                document.getElementById("pn" + i).classList.add('transparent');
-//                document.getElementById("pc" + i).classList.add('transparent');
-//                document.getElementById("p" + i).classList.add('transparent');
-//            }
-
-//            window.setTimeout(perk1an, 250);
-//        }
-//    } else {
-
-        if (getUrlVars()["exclude"] != null) {
-            var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
-        } else {
-            perk_blacklist = [];
+    } else {
+        var sel_perks = [];
+        while (sel_perks.length < 4) {
+            var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
+            if (perk_blacklist.indexOf(randomnumber) > -1) continue;
+        if (sel_perks.indexOf(randomnumber) > -1) continue;
+            sel_perks[sel_perks.length] = randomnumber;
         }
 
-        if (perk_blacklist.length > (perk_json.perks.length - 4)) {
-
-            // TODO: Error: Not enough perks selected
-
-        } else {
-            var sel_perks = [];
-            while (sel_perks.length < 4) {
-                var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
-                if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-            if (sel_perks.indexOf(randomnumber) > -1) continue;
-                sel_perks[sel_perks.length] = randomnumber;
+        var i = 0;
+        while (i < 4) {
+            var id = 'p' + i.toString();
+            if (getUrlVars()["bg-url"] != null) {
+                document.getElementById(id).style.backgroundImage = "url(" + getUrlVars()["bg-url"] + ")";
+            } else {
+                document.getElementById(id).style.backgroundImage = "url(https://perkroulette.xstarwake.com/css/img/perk_purple.png)";
             }
+            i++;
 
-            var i = 0;
-            while (i < 4) {
-                var id = 'p' + i.toString();
-                if (getUrlVars()["bg-url"] != null) {
-                    document.getElementById(id).style.backgroundImage = "url(" + getUrlVars()["bg-url"] + ")";
-                } else {
-                    document.getElementById(id).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/perk_purple.png)";
-                }
-                i++;
-
-            }
-
-            for (var i = 0; i < 4; i++) {
-                document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
-                document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
-                document.getElementById("pi" + i).style.backgroundImage = "url(http://perkroulette.xstarwake.com/css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
-
-                document.getElementById("pn" + i).classList.add('transparent');
-                document.getElementById("pc" + i).classList.add('transparent');
-                document.getElementById("p" + i).classList.add('transparent');
-            }
-
-            window.setTimeout(perk1an, 250);
         }
-//    }
+
+        for (var i = 0; i < 4; i++) {
+            document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
+            document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
+            document.getElementById("pi" + i).style.backgroundImage = "url(https://perkroulette.xstarwake.com/css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
+
+            document.getElementById("pn" + i).classList.add('transparent');
+            document.getElementById("pc" + i).classList.add('transparent');
+            document.getElementById("p" + i).classList.add('transparent');
+        }
+
+        window.setTimeout(perk1an, 250);
+    }
 }
 
 function perk1an() {
-    if (getUrlVars()["type"] == "NULL") {
-        document.getElementById("p0").classList.remove('transparent');
+    document.getElementById("p0").classList.remove('transparent');
 
-        document.getElementById("p0").classList.add('animate1');
-        ocument.getElementById("pn0").classList.add('animate2');
-        document.getElementById("pc0").classList.add('animate3');
+    document.getElementById("p0").classList.add('animate1');
+    document.getElementById("pn0").classList.add('animate2');
+    document.getElementById("pc0").classList.add('animate3');
 
-//        window.setTimeout(perk2an, 1000);
-    } else {
-        document.getElementById("p0").classList.remove('transparent');
-
-        document.getElementById("p0").classList.add('animate1');
-        ocument.getElementById("pn0").classList.add('animate2');
-        document.getElementById("pc0").classList.add('animate3');
-
-        window.setTimeout(perk2an, 1000);
-    }   
+    window.setTimeout(perk2an, 1000);
 }
 
 function perk2an() {
