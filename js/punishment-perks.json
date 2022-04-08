@@ -1,0 +1,39 @@
+{
+	"perks": [{
+		"perk_name": "Plain Hot Pickle",
+		"character": "No Pickle Powder"
+	}, {
+		"perk_name": "Hot Pickle",
+		"character": "With Pickle Powder"
+	}, {
+		"perk_name": "Plain Sweet Pickle",
+		"character": "No Pickle Powder"
+	}, {
+		"perk_name": "Sweet Pickle",
+		"character": "With Pickle Powder"
+	}, {
+		"perk_name": "Plain Pickle Juice",
+		"character": "No Pickle Powder"
+	}, {
+		"perk_name": "Pickle Juice",
+		"character": "With Pickle Powder"
+	}, {
+		"perk_name": "Plain Pickle Cotton Candy",
+		"character": "No Pickle Powder"
+	}, {
+		"perk_name": "Pickle Cotton Candy",
+		"character": "With Pickle Powder"
+	}, {	
+		"perk_name": "Plain Pickle Popcicle",
+		"character": "No Pickle Powder"
+	}, {	
+		"perk_name": "Pickle Popcicle",
+		"character": "With Pickle Powder"
+	}, {	
+		"perk_name": "Plain Pickle Ball",
+		"character": "No Pickle Powder"
+	}, {	
+		"perk_name": "Pickle Ball",
+		"character": "With Pickle Powder"
+	}]
+}

@@ -9,6 +9,8 @@ function applyChanges() {
         link += "?type=kill";
     } else if (document.querySelector("input#pckl").checked) {
         link += "?type=pckl";
+    } else if (document.querySelector("input#pnsh").checked) {
+        link += "?type=pnsh";
     }
 
     var perk_blacklist = [];
@@ -43,7 +45,6 @@ function applyChanges() {
     document.querySelector("#embed-preview").src = link;
 }
 
-
 function loadPerks() {
     var list = document.getElementById('perk-list');
     list.innerHTML = "";
@@ -61,6 +62,11 @@ function loadPerks() {
     } else if (document.querySelector("input#pckl").checked) {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/pickle-types.json", false);
+        request.send(null);
+        perk_json = JSON.parse(request.responseText);
+    } else if (document.querySelector("input#pnsh").checked) {
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://perkroulette.xstarwake.com/js/punishment-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
     }

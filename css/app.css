@@ -670,7 +670,7 @@ body#perkroulette-app .configuration>.perks {
     margin-bottom: 10px;
 }
 
-label[for="surv"], label[for="kill"], label[for="pckl"] {
+label[for="surv"], label[for="kill"], label[for="pckl"], label[for="pnsh"] {
     display: inline-block;
     width: calc(50% - 44px);
     padding: 5px 5px 5px 35px;
@@ -684,13 +684,14 @@ label[for="surv"], label[for="kill"], label[for="pckl"] {
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 20px;
+    margin-bottom: 5px;
 }
 
-label[for="surv"]:hover, label[for="kill"], label[for="pckl"] {
+label[for="surv"]:hover, label[for="kill"], label[for="pckl"], label[for="pnsh"] {
     background-color: #2b2b2b;
 }
 
-#surv:checked~.label_container label[for="surv"], #kill:checked~.label_container label[for="kill"], #pckl:checked~.label_container label[for="pckl"] {
+#surv:checked~.label_container label[for="surv"], #kill:checked~.label_container label[for="kill"], #pckl:checked~.label_container label[for="pckl"], #pnsh:checked~.label_container label[for="pnsh"] {
     background-image: url(img/icns/check-active.png);
     background-color: #222222;
 }

@@ -48,6 +48,12 @@ function loadPerks() {
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "pckl";
+    } else if (getUrlVars()["type"] == "pnsh") {
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://perkroulette.xstarwake.com/js/punshiment-perks.json", false);
+        request.send(null);
+        perk_json = JSON.parse(request.responseText);
+        active_type = "pnsh";
     }
 
     //  --- Sort perks alphabetically ---
