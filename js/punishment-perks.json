@@ -1,39 +1,111 @@
 {
 	"perks": [{
-		"perk_name": "Plain Hot Pickle",
-		"character": "No Pickle Powder"
+		"perk_name": "Bean Boozle",
+		"character": "Max"
 	}, {
-		"perk_name": "Hot Pickle",
-		"character": "With Pickle Powder"
+		"perk_name": "Bean Boozle",
+		"character": "Mel"
 	}, {
-		"perk_name": "Plain Sweet Pickle",
-		"character": "No Pickle Powder"
+		"perk_name": "Bean Boozle",
+		"character": "Tox"
 	}, {
-		"perk_name": "Sweet Pickle",
-		"character": "With Pickle Powder"
+		"perk_name": "Cricket",
+		"character": "Max"
 	}, {
-		"perk_name": "Plain Pickle Juice",
-		"character": "No Pickle Powder"
+		"perk_name": "Cricket",
+		"character": "Mel"
 	}, {
-		"perk_name": "Pickle Juice",
-		"character": "With Pickle Powder"
+		"perk_name": "Cricket",
+		"character": "Tox"
 	}, {
-		"perk_name": "Plain Pickle Cotton Candy",
-		"character": "No Pickle Powder"
+		"perk_name": "Mealworm",
+		"character": "Max"
 	}, {
-		"perk_name": "Pickle Cotton Candy",
-		"character": "With Pickle Powder"
-	}, {	
-		"perk_name": "Plain Pickle Popcicle",
-		"character": "No Pickle Powder"
-	}, {	
-		"perk_name": "Pickle Popcicle",
-		"character": "With Pickle Powder"
-	}, {	
-		"perk_name": "Plain Pickle Ball",
-		"character": "No Pickle Powder"
-	}, {	
-		"perk_name": "Pickle Ball",
-		"character": "With Pickle Powder"
+		"perk_name": "Mealworm",
+		"character": "Mel"
+	}, {
+		"perk_name": "Mealworm",
+		"character": "Tox"
+	}, {
+		"perk_name": "Ants",
+		"character": "Max"
+	}, {
+		"perk_name": "Ants",
+		"character": "Mel"
+	}, {
+		"perk_name": "Ants",
+		"character": "Tox"
+	}, {
+		"perk_name": "Lipstick",
+		"character": "Max"
+	}, {
+		"perk_name": "Lipstick",
+		"character": "Mel"
+	}, {
+		"perk_name": "Lipstick",
+		"character": "Tox"
+	}, {
+		"perk_name": "Fish Sauce",
+		"character": "Max"
+	}, {
+		"perk_name": "Fish Sauce",
+		"character": "Mel"
+	}, {
+		"perk_name": "Fish Sauce",
+		"character": "Tox"
+	}, {
+		"perk_name": "Maple Syrup Shot",
+		"character": "Max"
+	}, {
+		"perk_name": "Maple Syrup Shot",
+		"character": "Mel"
+	}, {
+		"perk_name": "Maple Syrup Shot",
+		"character": "Tox"
+	}, {
+		"perk_name": "Toxic Waste",
+		"character": "Max"
+	}, {
+		"perk_name": "Toxic Waste",
+		"character": "Mel"
+	}, {
+		"perk_name": "Toxic Waste",
+		"character": "Tox"
+	}, {
+		"perk_name": "Scoop AdvancedGG",
+		"character": "Max"
+	}, {
+		"perk_name": "Scoop AdvancedGG",
+		"character": "Mel"
+	}, {
+		"perk_name": "Scoop AdvancedGG",
+		"character": "Tox"
+	}, {
+		"perk_name": "Pickle Powder",
+		"character": "Max"
+	}, {
+		"perk_name": "Pickle Powder",
+		"character": "Mel"
+	}, {
+		"perk_name": "Pickle Powder",
+		"character": "Tox"
+	}, {
+		"perk_name": "Viewers Choice",
+		"character": "Max"
+	}, {
+		"perk_name": "Viewers Choice",
+		"character": "Mel"
+	}, {
+		"perk_name": "Viewers Choice",
+		"character": "Tox"
+	}, {
+		"perk_name": "Mod Choice",
+		"character": "Max"
+	}, {
+		"perk_name": "Mod Choice",
+		"character": "Mel"
+		}, {
+		"perk_name": "Mod Choice",
+		"character": "Tox"
 	}]
 }
