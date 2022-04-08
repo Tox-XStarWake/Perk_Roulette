@@ -112,7 +112,9 @@ function pickRandomPerk() {
 
             window.setTimeout(perk1an, 250);
         }
+
     } else {
+        
         if (getUrlVars()["exclude"] != null) {
             var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
         } else {
