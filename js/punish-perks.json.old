@@ -1,0 +1,39 @@
+{
+	"perks": [{
+		"perk_name": "Bean Boozle",
+		"character": "Max"
+	}, {
+		"perk_name": "Cricket",
+		"character": "Mel"
+	}, {
+		"perk_name": "Mealworm",
+		"character": "Tox"
+	}, {
+		"perk_name": "Ants",
+		"character": "Max"
+	}, {
+		"perk_name": "Lipstick",
+		"character": "Mel"
+	}, {
+		"perk_name": "Fish Sauce",
+		"character": "Tox"
+	}, {
+		"perk_name": "Maple Syrup Shot",
+		"character": "Max"
+	}, {
+		"perk_name": "Toxic Waste",
+		"character": "Mel"
+	}, {
+		"perk_name": "Scoop AdvancedGG",
+		"character": "Tox"
+	}, {
+		"perk_name": "Pickle Powder",
+		"character": "Max"
+	}, {
+		"perk_name": "Viewers Choice",
+		"character": "Mel"
+	}, {
+		"perk_name": "Mod Choice",
+		"character": "Tox"
+	}]
+}
