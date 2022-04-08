@@ -149,7 +149,7 @@ function pickRandomPerk() {
     }
 
     if (document.getElementById('pckl').checked) {
-        if (perk_blacklist.length > (perk_json.perks.length - 1)) {
+        if (perk_blacklist.length > (perk_json.perks.length - 3)) {
 
             var errorbox = document.getElementById('btn-error-msg');
             errorbox.innerHTML = "Not enough perks selected. Please select at least one.";
@@ -172,13 +172,13 @@ function pickRandomPerk() {
             }
 
             var i = 0;
-            while (i < 1) {
+            while (i < 3) {
                 var id = 'p' + i.toString();
                 document.getElementById(id).style.backgroundImage = "url(css/img/perk_purple.png)";
                 i++;
             }
 
-            for (var i = 0; i < 1; i++) {
+            for (var i = 0; i < 3; i++) {
                 document.getElementById("pn" + i).innerHTML = perk_json.perks[sel_perks[i]].perk_name;
                 document.getElementById("pc" + i).innerHTML = perk_json.perks[sel_perks[i]].character;
                 document.getElementById("pi" + i).style.backgroundImage = "url(css/img/" + active_type + "/iconperks-" + perk_json.perks[sel_perks[i]].perk_name.toString().toLowerCase().normalize("NFD").replace(/ /gi, '').replace(/'/gi, '').replace(/-/gi, '').replace(/&/gi, 'and').replace(/!/gi, '').replace(/:/gi, '').replace(/\p{Diacritic}/gu, '') + ".png)";
