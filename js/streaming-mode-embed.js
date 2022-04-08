@@ -171,7 +171,19 @@ function perk1an() {
         document.getElementById("pc0").classList.add('animate3');
 
         window.setTimeout(perk2an, 1000);
+
+    } else if (getUrlVars()["type"] == "pnsh") {   
+
+        document.getElementById("p0").classList.remove('transparent');
+
+        document.getElementById("p0").classList.add('animate1');
+        document.getElementById("pn0").classList.add('animate2');
+        document.getElementById("pc0").classList.add('animate3');
+
+//        window.setTimeout(perk2an, 1000);
+
     } else {    
+
         document.getElementById("p0").classList.remove('transparent');
 
         document.getElementById("p0").classList.add('animate1');
