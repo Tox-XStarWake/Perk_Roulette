@@ -245,6 +245,15 @@ function perk1an() {
 
 //        window.setTimeout(perk2an, 1000);
         window.setTimeout(enableButton, 1500);
+    } else if (document.getElementById('pnsh').checked) {
+        document.getElementById("p0").style.opacity = "1";
+
+        document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+
+//        window.setTimeout(perk2an, 1000);
+        window.setTimeout(enableButton, 1500);
     } else {
         document.getElementById("p0").style.opacity = "1";
 
