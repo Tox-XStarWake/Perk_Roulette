@@ -66,7 +66,7 @@ function loadPerks() {
         perk_json = JSON.parse(request.responseText);
     } else if (document.querySelector("input#pnsh").checked) {
         var request = new XMLHttpRequest();
-        request.open("GET", "http://perkroulette.xstarwake.com/js/punishment-perks.json", false);
+        request.open("GET", "http://perkroulette.xstarwake.com/js/punish-perks.json", false);
         request.send(null);
         perk_json = JSON.parse(request.responseText);
     }
