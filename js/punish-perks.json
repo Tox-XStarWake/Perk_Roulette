@@ -117,13 +117,28 @@
 		"perk_name": "Goose Head",
 		"character": "Max"
 	}, {
-		"perk_name": "Goose Head",
+		"perk_name": "TikTok Candies",
+		"character": "Max"
+	}, {
+		"perk_name": "TikTok Candies",
 		"character": "Mel"
 	}, {
-		"perk_name": "Goose Head",
-		"character": "Tox"
+		"perk_name": "Pickle Juice",
+		"character": "Max"
 	}, {
-		"perk_name": "Banana Head",
-		"character": "Tox"
+		"perk_name": "Pickle Juice",
+		"character": "Mel"
+	}, {
+		"perk_name": "Pickle Powder",
+		"character": "Max"
+	}, {
+		"perk_name": "Pickle Powder",
+		"character": "Mel"		
+	}, {
+		"perk_name": "Pickle Balls",
+		"character": "Max"		
+	}, {
+		"perk_name": "Pickle Balls",
+		"character": "Mel"		
 	}]
 }
