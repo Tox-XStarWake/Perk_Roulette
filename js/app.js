@@ -44,10 +44,10 @@ function loadPerks() {
 
     //  --- Sort perks alphabetically ---
 
-    perk_json.perks.sort(function(a, b) {
+    perk_json.perks.sort(function (a, b) {
         return a.perk_name.localeCompare(b.perk_name);
     });
-     
+
 
     for (var i = 0; i < perk_json.perks.length; i++) {
         var pn = perk_json.perks[i].perk_name;
@@ -123,7 +123,7 @@ function resetFilter() {
     var perk_elements = document.getElementById("perk-list").getElementsByTagName("label");
 
     for (i = 0; i < perk_elements.length; i++) {
-            perk_elements[i].classList.remove('hidden');
+        perk_elements[i].classList.remove('hidden');
     }
     document.getElementById("search-clear").classList.add('hidden');
 }
@@ -141,17 +141,17 @@ function pickRandomPerk() {
             if (checkbox.checked == false) {
                 perk_blacklist.push(i);
             }
-        }    
+        }
     } else {
 
         for (var i = 0; i < perk_json.perks.length; i++) {
 
             var pchid = "pch-" + i;
             var checkbox = document.getElementById(pchid);
-    
+
             if (checkbox.checked == false) {
                 perk_blacklist.push(i);
-            }  
+            }
         }
     }
 
@@ -174,7 +174,7 @@ function pickRandomPerk() {
             while (sel_perks.length < 1) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
                 if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-            if (sel_perks.indexOf(randomnumber) > -1) continue;
+                if (sel_perks.indexOf(randomnumber) > -1) continue;
                 sel_perks[sel_perks.length] = randomnumber;
             }
 
@@ -216,7 +216,7 @@ function pickRandomPerk() {
             while (sel_perks.length < 4) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
                 if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-            if (sel_perks.indexOf(randomnumber) > -1) continue;
+                if (sel_perks.indexOf(randomnumber) > -1) continue;
                 sel_perks[sel_perks.length] = randomnumber;
             }
 
@@ -238,8 +238,8 @@ function pickRandomPerk() {
             }
 
             window.setTimeout(perk1an, 250);
-        }   
-    }    
+        }
+    }
 }
 
 function perk1an() {
@@ -250,16 +250,25 @@ function perk1an() {
         document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
         document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-//        window.setTimeout(perk2an, 1000);
+        //        window.setTimeout(perk2an, 1000);
         window.setTimeout(enableButton, 1500);
-    } else if (document.getElementById('pnsh' || 'tcsm').checked) {
+    } else if (document.getElementById('pnsh').checked) {
         document.getElementById("p0").style.opacity = "1";
 
         document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
         document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
         document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-//        window.setTimeout(perk2an, 1000);
+        //        window.setTimeout(perk2an, 1000);
+        window.setTimeout(enableButton, 1500);
+    } else if (document.getElementById('tcsm').checked) {
+        document.getElementById("p0").style.opacity = "1";
+
+        document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
+        document.getElementById("pn0").style.animation = "perkRevealAnimation 1s ease-out";
+        document.getElementById("pc0").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+
+        //        window.setTimeout(perk2an, 1000);
         window.setTimeout(enableButton, 1500);
     } else {
         document.getElementById("p0").style.opacity = "1";
@@ -274,13 +283,13 @@ function perk1an() {
 
 function perk2an() {
     if (document.getElementById('pckl').checked) {
-//        document.getElementById("p1").style.opacity = "1";
+        //        document.getElementById("p1").style.opacity = "1";
 
-//        document.getElementById("p1").style.animation = "perkRevealAnimation 1.5s ease-out";
-//        document.getElementById("pn1").style.animation = "perkRevealAnimation 1s ease-out";
-//        document.getElementById("pc1").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+        //        document.getElementById("p1").style.animation = "perkRevealAnimation 1.5s ease-out";
+        //        document.getElementById("pn1").style.animation = "perkRevealAnimation 1s ease-out";
+        //        document.getElementById("pc1").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-//        window.setTimeout(perk3an, 1000);
+        //        window.setTimeout(perk3an, 1000);
     } else {
         document.getElementById("p1").style.opacity = "1";
 
@@ -289,18 +298,18 @@ function perk2an() {
         document.getElementById("pc1").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
         window.setTimeout(perk3an, 1000);
-    }   
+    }
 }
 
 function perk3an() {
     if (document.getElementById('pckl').checked) {
-//        document.getElementById("p2").style.opacity = "1";
+        //        document.getElementById("p2").style.opacity = "1";
 
-//        document.getElementById("p2").style.animation = "perkRevealAnimation 1.5s ease-out";
-//        document.getElementById("pn2").style.animation = "perkRevealAnimation 1s ease-out";
-//        document.getElementById("pc2").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+        //        document.getElementById("p2").style.animation = "perkRevealAnimation 1.5s ease-out";
+        //        document.getElementById("pn2").style.animation = "perkRevealAnimation 1s ease-out";
+        //        document.getElementById("pc2").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-//        window.setTimeout(perk4an, 1000);
+        //        window.setTimeout(perk4an, 1000);
     } else {
         document.getElementById("p2").style.opacity = "1";
 
@@ -314,13 +323,13 @@ function perk3an() {
 
 function perk4an() {
     if (document.getElementById('pckl').checked) {
-//        document.getElementById("p3").style.opacity = "1";
+        //        document.getElementById("p3").style.opacity = "1";
 
-//        document.getElementById("p3").style.animation = "perkRevealAnimation 1.5s ease-out";
-//        document.getElementById("pn3").style.animation = "perkRevealAnimation 1s ease-out";
-//        document.getElementById("pc3").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
+        //        document.getElementById("p3").style.animation = "perkRevealAnimation 1.5s ease-out";
+        //        document.getElementById("pn3").style.animation = "perkRevealAnimation 1s ease-out";
+        //        document.getElementById("pc3").style.animation = "perkRevealAnimation 1s ease-out 0.3s";
 
-//        window.setTimeout(enableButton, 1500);
+        //        window.setTimeout(enableButton, 1500);
     } else {
         document.getElementById("p3").style.opacity = "1";
 
