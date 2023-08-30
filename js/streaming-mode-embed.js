@@ -3,7 +3,7 @@ var active_type;
 
 function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
@@ -48,6 +48,12 @@ function loadPerks() {
         request.send(null);
         perk_json = JSON.parse(request.responseText);
         active_type = "pckl";
+    } else if (getUrlVars()["type"] == "tcsm") {
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://perkroulette.xstarwake.com/js/tcsm-perks.json", false);
+        request.send(null);
+        perk_json = JSON.parse(request.responseText);
+        active_type = "tcsm";
     } else if (getUrlVars()["type"] == "pnsh") {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/punish-perks.json", false);
@@ -58,7 +64,7 @@ function loadPerks() {
 
     //  --- Sort perks alphabetically ---
 
-    perk_json.perks.sort(function(a, b) {
+    perk_json.perks.sort(function (a, b) {
         return a.perk_name.localeCompare(b.perk_name);
     });
 }
@@ -83,8 +89,8 @@ function pickRandomPerk() {
             var sel_perks = [];
             while (sel_perks.length < 4) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
-            //    if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-            //if (sel_perks.indexOf(randomnumber) > -1) continue;
+                //    if (perk_blacklist.indexOf(randomnumber) > -1) continue;
+                //if (sel_perks.indexOf(randomnumber) > -1) continue;
                 sel_perks[sel_perks.length] = randomnumber;
             }
 
@@ -114,7 +120,7 @@ function pickRandomPerk() {
         }
 
     } else {
-        
+
         if (getUrlVars()["exclude"] != null) {
             var perk_blacklist = getUrlVars()["exclude"].split(",").map(Number);
         } else {
@@ -130,7 +136,7 @@ function pickRandomPerk() {
             while (sel_perks.length < 4) {
                 var randomnumber = Math.floor(Math.random() * (perk_json.perks.length));
                 if (perk_blacklist.indexOf(randomnumber) > -1) continue;
-            if (sel_perks.indexOf(randomnumber) > -1) continue;
+                if (sel_perks.indexOf(randomnumber) > -1) continue;
                 sel_perks[sel_perks.length] = randomnumber;
             }
 
@@ -158,7 +164,7 @@ function pickRandomPerk() {
 
             window.setTimeout(perk1an, 250);
         }
-    }            
+    }
 }
 
 function perk1an() {
@@ -172,7 +178,7 @@ function perk1an() {
 
         window.setTimeout(perk2an, 1000);
 
-    } else if (getUrlVars()["type"] == "pnsh") {   
+    } else if (getUrlVars()["type"] == "pnsh") {
 
         document.getElementById("p0").classList.remove('transparent');
 
@@ -180,9 +186,19 @@ function perk1an() {
         document.getElementById("pn0").classList.add('animate2');
         document.getElementById("pc0").classList.add('animate3');
 
-//        window.setTimeout(perk2an, 1000);
+        //        window.setTimeout(perk2an, 1000);
 
-    } else {    
+    } else if (getUrlVars()["type"] == "tcsm") {
+
+        document.getElementById("p0").classList.remove('transparent');
+
+        document.getElementById("p0").classList.add('animate1');
+        document.getElementById("pn0").classList.add('animate2');
+        document.getElementById("pc0").classList.add('animate3');
+
+        //        window.setTimeout(perk2an, 1000);
+
+    } else {
 
         document.getElementById("p0").classList.remove('transparent');
 
@@ -204,7 +220,7 @@ function perk2an() {
         document.getElementById("pc1").classList.add('animate3');
 
         window.setTimeout(perk3an, 1000);
-    } else {    
+    } else {
         document.getElementById("p1").classList.remove('transparent');
 
         document.getElementById("p1").classList.add('animate1');
@@ -223,8 +239,8 @@ function perk3an() {
         document.getElementById("pn2").classList.add('animate2');
         document.getElementById("pc2").classList.add('animate3');
 
-//        window.setTimeout(perk4an, 1000);
-    } else {   
+        //        window.setTimeout(perk4an, 1000);
+    } else {
         document.getElementById("p2").classList.remove('transparent');
 
         document.getElementById("p2").classList.add('animate1');
@@ -232,7 +248,7 @@ function perk3an() {
         document.getElementById("pc2").classList.add('animate3');
 
         window.setTimeout(perk4an, 1000);
-    }        
+    }
 }
 
 function perk4an() {
