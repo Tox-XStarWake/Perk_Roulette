@@ -1,0 +1,43 @@
+{
+	"perks": [
+		{
+			"perk_name": "Ana",
+			"character": "The Human Tank"
+		},
+		{
+			"perk_name": "Connie",
+			"character": "Picking All The Locks"
+		},
+		{
+			"perk_name": "Cook",
+			"character": "Diaper Butt Extrodinair"
+		},
+		{
+			"perk_name": "Hitchhiker",
+			"character": "Something hitch hikey..."
+		},
+		{
+			"perk_name": "Johnny",
+			"character": "Not the Famous Actors Version"
+		},
+		{
+			"perk_name": "Julie",
+			"character": "Supa Quiet Mouse"
+		},
+		{
+			"perk_name": "Leatherface",
+			"character": "Bite My Bar!"
+		},
+		{
+			"perk_name": "Leland",
+			"character": "Bullying Killers Since 2023"
+		},
+		{
+			"perk_name": "Sissy",
+			"character": "Gas Master"
+		},
+		{
+			"perk_name": "Sonny",
+			"character": "Something about sonny..."
+		}]
+}
