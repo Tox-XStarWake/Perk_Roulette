@@ -27,6 +27,13 @@ function loadPerks() {
         perk_json = JSON.parse(request.responseText);
         active_type = "pckl";
 
+    } else if (document.getElementById('tcsm').checked) {
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://perkroulette.xstarwake.com/js/tcsm-perks.json", false);
+        request.send(null);
+        perk_json = JSON.parse(request.responseText);
+        active_type = "tcsm";
+
     } else if (document.getElementById('pnsh').checked) {
         var request = new XMLHttpRequest();
         request.open("GET", "http://perkroulette.xstarwake.com/js/punish-perks.json", false);
@@ -245,7 +252,7 @@ function perk1an() {
 
 //        window.setTimeout(perk2an, 1000);
         window.setTimeout(enableButton, 1500);
-    } else if (document.getElementById('pnsh').checked) {
+    } else if (document.getElementById('pnsh' || 'tcsm').checked) {
         document.getElementById("p0").style.opacity = "1";
 
         document.getElementById("p0").style.animation = "perkRevealAnimation 1.5s ease-out";
