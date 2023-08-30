@@ -155,7 +155,7 @@ function pickRandomPerk() {
         }
     }
 
-    if (document.getElementById('pckl').checked) {
+    if (document.getElementById('pckl' || 'tcsm').checked) {
         if (perk_blacklist.length > (perk_json.perks.length - 3)) {
 
             var errorbox = document.getElementById('btn-error-msg');
